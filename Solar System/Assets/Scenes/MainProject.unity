@@ -450,6 +450,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1161843398}
+    - targetCorrespondingSourceObject: {fileID: 1647581975099426, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1161843401}
   m_SourcePrefab: {fileID: 100100000, guid: 835acc1a9ebe24c0fa3854c99346f9cd, type: 3}
 --- !u!1001 &193368037
 PrefabInstance:
@@ -528,7 +531,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9af308d2430c4a14e9eccd9e058c24d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotatingSun
-  sunSpeed: 0
 --- !u!4 &424672291 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4538169596089768, guid: ec1861462fc1b46f1a1c1c3c0f1f7f15, type: 3}
@@ -849,6 +851,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90dfbb824491c094d8978985411c03a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Orbiting
+  centralBody: {fileID: 424672291}
+  semiMajorAxis: 10
+  semiMinorAxis: 10
+  orbitSpeed: 900
+  orbitalTilt: 0
+  periapsisAngle: 0
+  showOrbitGizmo: 1
+  gizmoColor: {r: 0.004729271, g: 0, b: 1, a: 1}
+--- !u!114 &1161843401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1161843393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90dfbb824491c094d8978985411c03a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Orbiting
   centralBody: {fileID: 0}
   semiMajorAxis: 2
   semiMinorAxis: 1
@@ -856,7 +878,7 @@ MonoBehaviour:
   orbitalTilt: 0
   periapsisAngle: 0
   showOrbitGizmo: 1
-  gizmoColor: {r: 1, g: 0.7529413, b: 0.7960785, a: 1}
+  gizmoColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1420432671
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1290,8 +1312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Orbiting
   centralBody: {fileID: 424672291}
-  semiMajorAxis: 20
-  semiMinorAxis: 10
+  semiMajorAxis: 10
+  semiMinorAxis: 8
   orbitSpeed: 1
   orbitalTilt: 0
   periapsisAngle: 0

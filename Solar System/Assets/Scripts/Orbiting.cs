@@ -60,13 +60,15 @@ public class Orbiting : MonoBehaviour
 
         SetTheAngle();
         CalculateNewPosition(_currentAngle);
+
+        transform.position = CalculateNewPosition(_currentAngle);
     }
 
     /// <summary>
     /// This function sets the angle. It is doing it based on the orbit speed
     /// </summary>
     private void SetTheAngle() {
-        _currentAngle += orbitSpeed + Time.deltaTime;
+        _currentAngle += orbitSpeed * Time.deltaTime;
     }
 
     /// <summary>
@@ -94,15 +96,14 @@ public class Orbiting : MonoBehaviour
             return;
         }
         DrawOrbitGizmo();
-
     }
 
     private void DrawOrbitGizmo() { 
         Gizmos.color = gizmoColor;
         int segment = 64;
-        Vector3 prev = new Vector3(0, 0, 0);
+        Vector3 prev = Vector3.zero;
         for (int i=0; i<=segment; i++) {
-            float angle = i/segment; //*360
+            float angle = i * 360f / segment;
             Vector3 point = CalculateNewPosition(angle);
             if (i>0) {
                 Gizmos.DrawLine(prev, point);
